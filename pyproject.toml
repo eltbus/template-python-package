@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "python-package"
+version = "0.1.0"
+description = ""
+authors = ["eltbus <33374178+eltbus@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "python_package"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.12.0"
+isort = "^5.11.4"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.2.1"
+pytest-mock = "^3.10.0"
+coverage = "^7.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+use_isort = true
+
+[tool.isort]
+line_length = 120
+combine_as_imports = true
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "WARN"
